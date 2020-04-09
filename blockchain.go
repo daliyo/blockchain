@@ -1,6 +1,9 @@
 package blockchain
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 var chain []Block
 
@@ -26,6 +29,6 @@ func AddBlock(newblock Block) {
 // PrintBlockChain 打印区块链内容
 func PrintBlockChain() {
 	for _, block := range chain {
-		fmt.Printf("index=%s, pre=%s, hash=%s, data=%s \n", string(block.Index), block.PreviousHash, block.Hash, block.Data)
+		fmt.Printf("index=%s, pre=%s, hash=%s, data=%s \n", strconv.FormatInt(block.Index, 10), block.PreviousHash, block.Hash, block.Data)
 	}
 }
