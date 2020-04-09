@@ -18,7 +18,7 @@ func AddBlock(newblock Block) {
 	latestBlock := getLatestBlock()
 
 	newblock.PreviousHash = latestBlock.Hash
-	newblock.CalculateHash()
+	newblock.Hash = newblock.CalculateHash()
 
 	chain = append(chain, newblock)
 }
