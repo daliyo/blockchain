@@ -1,7 +1,7 @@
 package blockchain
 
 import (
-	"crypto"
+	"crypto/sha256"
 	"fmt"
 	"strconv"
 	"time"
@@ -23,7 +23,7 @@ func CreateGenesisBlock() Block {
 
 // CalculateHash 计算当前区块的HASH值
 func (block Block) CalculateHash() string {
-	sha256 := crypto.SHA256.New()
+	sha256 := sha256.New()
 	sha256.Write([]byte(strconv.FormatInt(block.Index, 10) + block.Timestamp + block.Data + block.PreviousHash))
 
 	hash, err := fmt.Printf("%x", sha256.Sum(nil))
