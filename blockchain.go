@@ -25,5 +25,7 @@ func AddBlock(newblock Block) {
 
 // PrintBlockChain 打印区块链内容
 func PrintBlockChain() {
-	fmt.Println(chain)
+	for _, block := range chain {
+		fmt.Printf("index=%s, pre=%s, hash=%s, data=%s \n", string(block.Index), block.PreviousHash, block.Hash, block.Data)
+	}
 }

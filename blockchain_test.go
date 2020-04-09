@@ -1,6 +1,8 @@
 package blockchain
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestAddBlock(t *testing.T) {
 	type args struct {
@@ -15,6 +17,19 @@ func TestAddBlock(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			AddBlock(tt.args.newblock)
+		})
+	}
+}
+
+func TestPrintBlockChain(t *testing.T) {
+	tests := []struct {
+		name string
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			PrintBlockChain()
 		})
 	}
 }
