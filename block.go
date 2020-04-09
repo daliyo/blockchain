@@ -18,7 +18,7 @@ type Block struct {
 
 // CreateGenesisBlock 创建创世区块
 func CreateGenesisBlock() Block {
-	return Block{0, time.Now().String(), "I'm J.", "000", ""}
+	return Block{0, time.Now().String(), "I'm J.", "", "000"}
 }
 
 // CalculateHash 计算当前区块的HASH值
